@@ -28,6 +28,7 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+        <View><Text>哈哈哈</Text></View>
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
