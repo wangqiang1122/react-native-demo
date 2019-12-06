@@ -1,0 +1,81 @@
+import React from 'react';
+import { View, Text, StyleSheet,Button } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+
+
+
+class App extends React.Component{
+    constructor(props) {
+      super(props)
+      this.setState = {
+          name: 'hello'
+      }
+    }
+    // 数据挂载
+    componentDidMount() {
+      console.log('数据挂载')
+    }
+    // 页面被销毁
+    componentWillUnmount() {
+        console.log('页面被销毁')
+    }
+    render() {
+        function onPressLearnMore() {
+            alert('2222')
+        }
+       return (
+           <View style={styles.h}>
+               <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
+                  <Text>我是文本拉</Text>
+               </View>
+               <View style={{flex:1,backgroundColor: 'green',marginLeft:5,justifyContent:'center'}}>
+                 <Text style={{textAlign: 'center'}}>我是文本拉</Text>
+               </View>
+               <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}> 
+                   <Text>我是文本拉</Text>
+                   </View>
+               <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
+               <Text>我是文本拉</Text>
+               </View>
+               <Button onPress={ onPressLearnMore } title='点击我'/>
+               <Test sex={'name'}></Test>
+           </View>
+       );
+    }
+}
+
+class Test extends React.Component{
+    constructor(props) {
+       super(props) 
+    }
+    componentDidMount() {
+
+    }
+
+    render() {
+        return (
+            <View>
+              <Text>{this.props.sex}</Text>
+            </View>
+        )
+    }
+}
+
+const styles = StyleSheet.create({
+   h:{
+    //    flexDirection: 'row',
+       height: 200,
+       backgroundColor: 'red',
+    //    flex: 1,
+    //    justifyContent: "space-between",
+       justifyContent: 'center',
+    //    alignItems: 'center',
+       flex:1
+   },
+   t: {
+    fontSize: 40,
+    color: 'red',
+   }
+})
+
+export default App;
