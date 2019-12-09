@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,Button } from 'react-native';
+import { View, Text, StyleSheet,Button, Alert } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
@@ -21,11 +21,17 @@ class App extends React.Component{
     }
     render() {
         function onPressLearnMore() {
-            alert('2222')
+            Alert.alert('Alert Title',
+            'My Alert Msg',  [
+                {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false })
         }
        return (
            <View style={styles.h}>
-               <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
+               <Button onPress={ onPressLearnMore } title='点击我'/>
+               {/* <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
                   <Text>我是文本拉</Text>
                </View>
                <View style={{flex:1,backgroundColor: 'green',marginLeft:5,justifyContent:'center'}}>
@@ -37,8 +43,7 @@ class App extends React.Component{
                <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
                <Text>我是文本拉</Text>
                </View>
-               <Button onPress={ onPressLearnMore } title='点击我'/>
-               <Test sex={'name'}></Test>
+               <Test sex={'name'}></Test> */}
            </View>
        );
     }
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
    h:{
     //    flexDirection: 'row',
        height: 200,
-       backgroundColor: 'red',
+    //    backgroundColor: 'red',
     //    flex: 1,
     //    justifyContent: "space-between",
        justifyContent: 'center',
