@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,Button, Alert } from 'react-native';
+import { View, Text, StyleSheet,Button, Alert, Image } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
@@ -30,6 +30,10 @@ class App extends React.Component{
         }
        return (
            <View style={styles.h}>
+                <Image source={require('../../images/kai.png')} style={{width:60,height:60}}></Image>
+               <Image 
+               style={{width:100,height:100}}
+               source={{uri:'https://img.alicdn.com/simba/img/TB1vSgPo7T2gK0jSZPcSuwKkpXa.jpg'}}/>
                <Button onPress={ onPressLearnMore } title='点击我'/>
                {/* <View style={{flex:1,backgroundColor: 'green',marginLeft:5}}>
                   <Text>我是文本拉</Text>
@@ -69,7 +73,7 @@ class Test extends React.Component{
 const styles = StyleSheet.create({
    h:{
     //    flexDirection: 'row',
-       height: 200,
+    //    height: 200,
     //    backgroundColor: 'red',
     //    flex: 1,
     //    justifyContent: "space-between",
